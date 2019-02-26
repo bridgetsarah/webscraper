@@ -3,17 +3,12 @@ import requests
 
 with open('simple.html') as html_file:                          #Open file object
     soup = BeautifulSoup(html_file, 'lxml')                     #Html parser 'lxml'
+# unknown issue - resolving soon
+for article in = soup.find_all('div', class_='news'):
+    headline = article.news.h1.text
+    print(headline)
 
-#match = soup.div.text                                           #Searches for divs containing 'text'
-#print(match)
+    summary = article.news.p.text
+    print(summary)
 
-news = soup.find('div', class_='news')
-print(news)
-# print article
-headline = news.h1.text
-print(headline)
-
-#print summary
-
-summary = news.p.text
-print(summary)
+    print()
