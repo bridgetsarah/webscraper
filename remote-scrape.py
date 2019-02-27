@@ -1,11 +1,13 @@
-from bs4 import BeautifulSoup
 import requests  
+from bs4 import BeautifulSoup
 
-with open('http://www.robotstxt.org/meta.html') as html_file:                          #Open file object
-    soup = BeautifulSoup(html_file, 'lxml')                     #Html parser 'lxml'
+url = ('http://www.devbk.me/')
+response = requests.get(url)
+html = response.content
 
-#match = soup.div.text                                           #Searches for divs containing 'text'
-#print(match)
+soup = BeautifulSoup(html_doc, 'html.parser')  #Html Parser
+soup.find_all("title")
+soup.find_all("p")
+soup.find_all("a")
 
-news = soup.find('div', class_='content')
-print(news)
+print(BeautifulSoup)
